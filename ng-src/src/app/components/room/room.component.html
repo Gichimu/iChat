@@ -1,0 +1,79 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>ChatApp</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button><mat-icon>exit_to_app</mat-icon></button>
+  </mat-toolbar>
+
+  <mat-drawer-container class="example-container">
+    <mat-drawer class="text-center" mode="side" #drawer>
+      <h4>Users online</h4>
+      <hr />
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let user of currentUsers"
+          ><mat-icon>sentiment_satisfied_alt</mat-icon
+          ><b> {{ user }}</b></mat-list-item
+        >
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content class="drawer">
+      <!-- <div class="alert alert-primary alert-dismissible fade show" role="alert" id="alert">
+          <strong>{{username}}</strong> has joined the chat.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+
+      <div *ngIf="chatMessages; else elseBlock" class="chat">
+        <div class="message-container" *ngFor="let chat of chatMessages">
+          <div *ngIf="isSender; else receiverBlock">
+            <div class="sender">
+              <small class="meta"
+                ><strong
+                  >{{ chat.username }}<span> {{ chat.timestamp }}</span></strong
+                ></small
+              ><br />
+
+              {{ chat.text }}
+            </div>
+          </div>
+          <ng-template #receiverBlock>
+            <div class="receiver">
+              <div>
+                <small class="meta"
+                  ><strong
+                    >{{ chat.username
+                    }}<span> {{ chat.timestamp }}</span></strong
+                  ></small
+                ><br />
+                <!-- <hr> -->
+
+                {{ chat.text }}
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <ng-template #elseBlock>
+        <div class="chat-bubble chat-text">Welcome to the chat, boi</div>
+      </ng-template>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  <form action="" class="form">
+    <mat-form-field class="text-box" appearance="standard">
+      <input
+        placeholder="enter text here..."
+        name="chatMessage"
+        matInput
+        autofocus
+        [(ngModel)]="chatMessage"
+      />
+      <button mat-icon-button matSuffix (click)="sendMessage()">
+        <mat-icon>send</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</mat-card>

@@ -1,0 +1,109 @@
+mat-card {
+  width: 70%;
+  align-content: center;
+  margin: 1% auto;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-container {
+  width: 100%;
+  max-height: 100%;
+  /* margin: 1%; */
+  /* border: 1px solid #555; */
+  height: 100%;
+}
+
+mat-drawer,
+mat-drawer-content {
+  padding: 1%;
+}
+
+mat-drawer {
+  background-color: rgb(202, 207, 214);
+  padding: 3%;
+}
+
+.header {
+  padding: 3%;
+}
+
+mat-drawer-content {
+  background-color: lavender;
+  padding: 2%;
+}
+
+a {
+  color: white;
+}
+
+.input {
+  width: 100%;
+}
+
+.input-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.text-box {
+  width: 100%;
+}
+
+
+
+.message-container {
+  overflow-x: hidden;
+  /* padding: 1%; */
+  display: flex;
+}
+
+.alert {
+  font-size: 0.8rem;
+  /* max-width: 50%; */
+  display: inline-block;
+  overflow-wrap: break-word;
+}
+
+.listitem {
+  margin: 1%;
+}
+
+.chat {
+  position: relative;
+}
+
+.receiver {
+  position: absolute;
+  margin-left: 0;
+}
+
+.sender {
+  position: absolute;
+  margin-right: 0;
+  color: red;
+}
+
+/* .form {
+    align-items: flex-end;
+} */
+
+
+
+.avatar {
+  border: 1px solid black;
+  max-width: 5%;
+  max-height: 5%;
+  border-radius: 50%;
+}
+
+.chat-right {
+  text-align: right;
+}

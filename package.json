@@ -1,0 +1,20 @@
+{
+  "name": "ichat",
+  "version": "1.0.0",
+  "description": "Backend for my socketIO chat application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server.js"
+  },
+  "author": "Eric Gichimu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "socket.io": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

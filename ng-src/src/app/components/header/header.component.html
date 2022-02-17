@@ -1,0 +1,50 @@
+<mat-toolbar color="primary" class="flex-container">
+  <div class="flex1">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>face</mat-icon>
+    </button>
+    <span>ChatApp</span>
+  </div>
+  <span class="example-spacer"></span>
+  <div class="flex2">
+    <ng-container *ngIf="user$ | async as user; else elseBlock">
+      <button
+        mat-mini-fab
+        color="primary"
+        class="example-icon favorite-icon"
+        [matTooltip]="user.displayName"
+        aria-label="user.displayName"
+        
+      >
+        <div *ngIf="user.photoURL; else alt">
+          <img [src]="user.photoURL" class="avatar" alt="" />
+        </div>
+        <ng-template #alt>
+          <mat-icon>sentiment_satisfied_alt</mat-icon>
+        </ng-template>
+      </button>
+
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        (click)="logout()"
+      >
+        <mat-icon>power_settings_new</mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #elseBlock>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </ng-template>
+  </div>
+</mat-toolbar>
